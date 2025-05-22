@@ -15,7 +15,7 @@ import time # Para adicionar delays em caso de erro de permissão
 # Para o modelo 'gemini-2.0-flash', pode não ser necessário uma chave de API em alguns ambientes,
 # mas é uma boa prática tê-la para uso mais robusto e para evitar limites de uso.
 # IMPORTANTE: Mantenha sua chave de API segura e não a compartilhe publicamente!
-GEMINI_API_KEY = "AIzaSyAJKkS4jclV7FqgG0VAd29CV1P-bD1Bxww" # <--- INSIRA SUA CHAVE DE API AQUI
+GEMINI_API_KEY = "SUA CHAVE API" # <--- INSIRA SUA CHAVE DE API AQUI
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Nomes dos apresentadores do podcast
