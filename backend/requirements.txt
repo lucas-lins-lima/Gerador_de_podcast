@@ -1,1 +1,8 @@
-
+# backend/requirements.txt
+fitz
+Pillow
+google-generativeai
+pyttsx3
+python-dotenv
+fastapi
+uvicorn[standard] # uvicorn é o servidor ASGI para rodar FastAPI
