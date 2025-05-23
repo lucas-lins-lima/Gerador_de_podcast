@@ -1,4 +1,4 @@
-# 🎙️ Gerador de Podcast a partir de PDF
+# 🎙️ PodGenius
 
 Este projeto ambicioso visa transformar documentos PDF em podcasts dinâmicos e envolventes, utilizando o poder da Inteligência Artificial. A ideia é proporcionar uma forma inovadora de consumir conteúdo acadêmico ou informativo, otimizando o tempo e a acessibilidade através da conversão de texto e imagens em áudio com vozes distintas para diferentes apresentadores.
 
