@@ -1,0 +1,47 @@
+// .devcontainer/devcontainer.json
+{
+  "name": "Gerador de Podcast",
+  "image": "mcr.microsoft.com/devcontainers/universal:latest",
+  "features": {
+    // Você pode adicionar features específicas se precisar de versões exatas de Python ou Node.js
+    // "ghcr.io/devcontainers/features/python:1": {
+    //   "version": "3.11" // Exemplo: se quiser Python 3.11 especificamente
+    // },
+    // "ghcr.io/devcontainers/features/node:1": {
+    //   "version": "18" // Exemplo: se quiser Node.js 18 especificamente
+    // }
+  },
+  "postCreateCommand": {
+    "install_backend_deps": "cd backend && pip install -r requirements.txt",
+    "install_frontend_deps": "cd frontend && npm install"
+  },
+  "portsAttributes": {
+    "8000": {
+      "label": "Backend (FastAPI)",
+      "onAutoForward": "notify"
+    },
+    "5173": { // Porta padrão do Vite para o frontend
+      "label": "Frontend (React)",
+      "onAutoForward": "openBrowser" // Abre automaticamente no navegador
+    }
+  },
+  "forwardPorts": [8000, 5173],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "postAttachCommand": {
+    "start_backend": "cd backend && source venv/bin/activate && python -m uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload",
+    "start_frontend": "cd frontend && npm run dev -- --host 0.0.0.0 --port 5173"
+  }
+}
